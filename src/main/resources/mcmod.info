@@ -1,0 +1,21 @@
+{
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "A WarpDrive addon meant to extend what computers can access!",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "https://github.com/SinTh0r4s/MyMod",
+		"updateUrl": "",
+		"authorList": ["TechTastic"],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": ["WarpDrive"],
+		"dependencies": ["WarpDrive", "ComputerCraft", "OpenComputers"],
+		"dependants": [""],
+		"useDependencyInformation": false
+	}]
+}
