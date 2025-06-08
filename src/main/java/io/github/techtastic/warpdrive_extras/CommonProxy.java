@@ -8,6 +8,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import io.github.techtastic.warpdrive_extras.block.StarSystemViewerBlock;
 import io.github.techtastic.warpdrive_extras.block.entity.StarSystemViewerTileEntity;
 import io.github.techtastic.warpdrive_extras.computercraft.WDEPeripheralProvider;
+import io.github.techtastic.warpdrive_extras.opencomputers.OCEnvironmentProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
@@ -28,14 +29,19 @@ public class CommonProxy {
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+        // Because OC yelled at me
+        if (Loader.isModLoaded("OpenComputers")) {
+            new OCEnvironmentProvider().register();
+        }
+    }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void postInit(FMLPostInitializationEvent event) {
         // CC / OC integration
 
-        //if (Loader.isModLoaded("ComputerCraft")) {
-        //    new WDEPeripheralProvider().register();
-        //}
+        if (Loader.isModLoaded("ComputerCraft")) {
+            new WDEPeripheralProvider().register();
+        }
     }
 }
