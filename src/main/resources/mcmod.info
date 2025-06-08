@@ -1,11 +1,11 @@
 {
 	"modListVersion": 2,
 	"modList": [{
-		"modid": "${modId}",
-		"name": "${modName}",
+		"modid": "warpdrive_extras",
+		"name": "WarpDrive Extras",
 		"description": "A WarpDrive addon meant to extend what computers can access!",
-		"version": "${modVersion}",
-		"mcversion": "${minecraftVersion}",
+		"version": "1.0.0",
+		"mcversion": "1.7.10",
 		"url": "https://github.com/TechTastic/WarpDrive-Extras",
 		"updateUrl": "",
 		"authorList": ["TechTastic"],
@@ -15,7 +15,7 @@
 		"parent": "",
 		"requiredMods": ["WarpDrive"],
 		"dependencies": ["WarpDrive", "ComputerCraft", "OpenComputers"],
-		"dependants": [""],
+		"dependants": [],
 		"useDependencyInformation": false
 	}]
 }

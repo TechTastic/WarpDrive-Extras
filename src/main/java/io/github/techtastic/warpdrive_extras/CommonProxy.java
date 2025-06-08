@@ -16,10 +16,7 @@ public class CommonProxy {
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
-        Config.synchronizeConfiguration(event.getSuggestedConfigurationFile());
-
-        WarpDriveExtras.LOG.info(Config.greeting);
-        WarpDriveExtras.LOG.info("I am WarpDriveExtras at version " + Tags.VERSION);
+        WarpDriveExtras.LOG.info("I am WarpDriveExtras at version 1.0.0");
 
         STAR_SYSTEM_VIEWER = new StarSystemViewerBlock(Material.anvil);
 

@@ -16,6 +16,5 @@ public class StarSystemViewerBlock extends Block {
         this.setResistance(10f);
         this.setStepSound(Block.soundTypeMetal);
         this.setBlockTextureName("warpdrive_extras:star_system_viewer");
-        this.setBlockName("warpdrive_extras:star_system_viewer");
     }
 }

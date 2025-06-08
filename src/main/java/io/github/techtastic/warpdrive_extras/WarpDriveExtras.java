@@ -9,11 +9,14 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = WarpDriveExtras.MODID, version = Tags.VERSION, name = "WarpDrive Extras", acceptedMinecraftVersions = "[1.7.10]")
+@Mod(modid = WarpDriveExtras.MODID, version = "1.0.0", name = "WarpDrive Extras")
 public class WarpDriveExtras {
 
     public static final String MODID = "warpdrive_extras";
     public static final Logger LOG = LogManager.getLogger(MODID);
+
+    @Mod.Instance(MODID)
+    public static WarpDriveExtras instance;
 
     public WarpDriveExtras() {
         System.out.println("[WarpDrive Extras] Mod constructor called!");
