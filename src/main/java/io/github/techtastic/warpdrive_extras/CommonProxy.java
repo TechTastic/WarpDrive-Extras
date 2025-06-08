@@ -34,8 +34,8 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent event) {
         // CC / OC integration
 
-        if (Loader.isModLoaded("ComputerCraft")) {
-            new WDEPeripheralProvider().register();
-        }
+        //if (Loader.isModLoaded("ComputerCraft")) {
+        //    new WDEPeripheralProvider().register();
+        //}
     }
 }

@@ -53,47 +53,42 @@ public class StarSystemViewerTileEntity extends TileEntity implements Environmen
     public void onMessage(Message message) {}
 
     @Override
-    @Optional.Method(modid = "OpenComputers")
     public void updateEntity() {
-        if (!addedToNetwork) {
+        if (Loader.isModLoaded("OpenComputers") && !addedToNetwork) {
             addedToNetwork = true;
             Network.joinOrCreateNetwork(this);
         }
     }
 
     @Override
-    @Optional.Method(modid = "OpenComputers")
     public void onChunkUnload() {
         super.onChunkUnload();
 
-        if (node != null)
+        if (Loader.isModLoaded("OpenComputers") && node != null)
             node.remove();
     }
 
     @Override
-    @Optional.Method(modid = "OpenComputers")
     public void invalidate() {
         super.invalidate();
 
-        if (node != null)
+        if (Loader.isModLoaded("OpenComputers") && node != null)
             node.remove();
     }
 
     @Override
-    @Optional.Method(modid = "OpenComputers")
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
 
-        if (node != null && node.host() == this)
+        if (Loader.isModLoaded("OpenComputers") && node != null && node.host() == this)
             node.load(compound.getCompoundTag("oc:node"));
     }
 
     @Override
-    @Optional.Method(modid = "OpenComputers")
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
 
-        if (node != null && node.host() == this) {
+        if (Loader.isModLoaded("OpenComputers") && node != null && node.host() == this) {
             final NBTTagCompound nodeNbt = new NBTTagCompound();
             node.save(nodeNbt);
             compound.setTag("oc:node", nodeNbt);

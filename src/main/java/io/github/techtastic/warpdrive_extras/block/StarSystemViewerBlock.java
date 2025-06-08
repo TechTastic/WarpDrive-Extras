@@ -34,7 +34,7 @@ public class StarSystemViewerBlock extends Block {
 
     @Override
     public boolean hasTileEntity(int metadata) {
-        return Loader.isModLoaded("OpenComputers");
+        return true;
     }
 
     @Override
