@@ -6,7 +6,7 @@
 		"description": "A WarpDrive addon meant to extend what computers can access!",
 		"version": "${modVersion}",
 		"mcversion": "${minecraftVersion}",
-		"url": "https://github.com/SinTh0r4s/MyMod",
+		"url": "https://github.com/TechTastic/WarpDrive-Extras",
 		"updateUrl": "",
 		"authorList": ["TechTastic"],
 		"credits": "",
