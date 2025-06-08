@@ -24,8 +24,7 @@ public class CommonProxy {
         STAR_SYSTEM_VIEWER = new StarSystemViewerBlock(Material.anvil);
 
         GameRegistry.registerBlock(STAR_SYSTEM_VIEWER, ItemBlock.class, "star_system_viewer");
-        if (Loader.isModLoaded("OpenComputers"))
-            GameRegistry.registerTileEntity(StarSystemViewerTileEntity.class, "star_system_viewer");
+        GameRegistry.registerTileEntity(StarSystemViewerTileEntity.class, "star_system_viewer");
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
