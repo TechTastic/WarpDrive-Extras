@@ -1,5 +1,6 @@
 package io.github.techtastic.warpdrive_extras.opencomputers;
 
+import cr0s.warpdrive.api.ExceptionChunkNotLoaded;
 import io.github.techtastic.warpdrive_extras.util.LuaConversionMethods;
 import li.cil.oc.api.Network;
 import li.cil.oc.api.machine.Arguments;
@@ -8,6 +9,8 @@ import li.cil.oc.api.machine.Context;
 import li.cil.oc.api.network.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import scala.StringContext;
+import scala.runtime.BoxesRunTime;
 
 public class OCEnvironmentAbstraction implements ManagedEnvironment {
     Node node;
@@ -77,7 +80,7 @@ public class OCEnvironmentAbstraction implements ManagedEnvironment {
             node.remove();
     }
 
-    @Callback(direct = true)
+    @Callback(direct = true, doc = "function():table -- Get the current celestial bodies configured by WarpDrive.")
     public Object[] view(final Context context, final Arguments arguments) {
         return new Object[] { LuaConversionMethods.getAllCelestialObjects() };
     }
