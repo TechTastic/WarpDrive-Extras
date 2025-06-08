@@ -1,10 +1,13 @@
 package io.github.techtastic.warpdrive_extras;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.github.techtastic.warpdrive_extras.block.StarSystemViewerBlock;
+import io.github.techtastic.warpdrive_extras.block.entity.StarSystemViewerTileEntity;
+import io.github.techtastic.warpdrive_extras.computercraft.WDEPeripheralProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
@@ -21,9 +24,8 @@ public class CommonProxy {
         STAR_SYSTEM_VIEWER = new StarSystemViewerBlock(Material.anvil);
 
         GameRegistry.registerBlock(STAR_SYSTEM_VIEWER, ItemBlock.class, "star_system_viewer");
-
-        // Debug output
-        System.out.println("[WarpDrive Extras] Registered block: " + STAR_SYSTEM_VIEWER.getUnlocalizedName());
+        if (Loader.isModLoaded("OpenComputers"))
+            GameRegistry.registerTileEntity(StarSystemViewerTileEntity.class, "star_system_viewer");
     }
 
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
@@ -32,5 +34,9 @@ public class CommonProxy {
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
     public void postInit(FMLPostInitializationEvent event) {
         // CC / OC integration
+
+        if (Loader.isModLoaded("ComputerCraft")) {
+            new WDEPeripheralProvider().register();
+        }
     }
 }
